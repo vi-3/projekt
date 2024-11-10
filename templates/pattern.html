@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Исправление пути к CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container"> 
+        <header class="header header--active">
+            <div class="container">
+                <div class="header__right header-right">
+                    <div class="header-right__top header-top">
+                        <div>
+                            <a href="{{ url_for('registration') }}" class="header-top__btn--application btnLink">Регистрация</a>
+                            <a href="{{ url_for('login') }}" class="header-top__btn--application btnLink">Логин</a>
+                            <a href="{{ url_for('user_profile') }}" class="header-top__btn">Личный кабинет</a>
+                        </div>
+                    </div>
+                    <nav class="header-right__menu header-menu" id="menu">
+                        <div class="header-menu__container container">
+                            <ul>
+                                <li class="header-menu__item">
+                                    <a href="{{ url_for('user_profile') }}" class="header-menu__link">Личный кабинет</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a href="{{ url_for('search') }}" class="header-menu__link">Поиск</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a href="{{ url_for('Group_Detail') }}" class="header-menu__link">Группы</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        {% block body %}{% endblock %}
+    </div>
+</body>
+</html>
